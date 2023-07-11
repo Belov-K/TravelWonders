@@ -20,8 +20,8 @@ class Tour(models.Model):
 
     hotel=models.ForeignKey(Hotel, on_delete=models.CASCADE)
 
-    on=models.CharField('туда', max_length=50)
-    out=models.CharField('обратно', max_length=50)
+    on=models.DateTimeField('туда')
+    out=models.DateTimeField('обратно')
     name=models.CharField('название тура', max_length=50)
     price=models.IntegerField('цена')
 
@@ -41,3 +41,23 @@ class City(models.Model):
 
     def __str__(self):
         return self.name_city
+
+class Hotel_detail(models.Model):
+    name=models.CharField('название', max_length=50)
+    livingroom=models.ImageField('фото гостинной')
+    bedroom=models.ImageField('фото спальни')
+    hallway=models.ImageField('фото прихожей')
+
+    class Meta:
+        verbose_name="Об отеле"
+        verbose_name_plural="Об отелях"
+
+    def __str__(self):
+        return self.name
+
+class Advantages(models.Model):
+    name=models.CharField('название преимущества', max_length=50)
+    image=models.ImageField('фото')
+
+    def __str__(self):
+        return self.name

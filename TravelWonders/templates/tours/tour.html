@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}TravelWonders{% endblock %}
+
+{% block content %}
+
+    {% for tour in tour_list %}
+        <p>{{tour.name}}</p>
+        <p>Туда {{tour.on}}</p>
+        <p>Обратно {{tour.out}}</p>
+        <p>{{tour.price}}</p>
+    {% endfor %}
+    <a href="{% url 'tours:hotel_list' %}">Назад</a>
+
+{% endblock %}
