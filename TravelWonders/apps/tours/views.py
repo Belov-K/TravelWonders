@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Hotel, Tour, Hotel_detail, Advantage
+from .models import Hotel, Tour, Hotel_detail, Advantage, Tourinfo
 
 def hotel_list(request):
     hotel_list=Hotel.objects.all()
@@ -16,3 +16,7 @@ def hotel_detail(request):
 def advantage(request):
     advantage=Advantage.objects.all()
     return render(request, 'tours/detail.html', {'advantage': advantage})
+
+def tour_info(request):
+    tour_info=Tourinfo.objects.all()
+    return render(request, 'tours/info.html', {'tour_info': tour_info})

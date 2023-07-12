@@ -6,5 +6,6 @@ app_name='tours'
 urlpatterns=[
     path('', views.hotel_list, name='hotel_list'),
     path('tour/', views.tour_list, name='tour_list'),
-    path('hotel/', views.hotel_detail, name='hotel_detail')
+    path('hotel/', views.hotel_detail, name='hotel_detail'),
+    path('tour_info/', views.tour_info, name='tour_info'),
 ]

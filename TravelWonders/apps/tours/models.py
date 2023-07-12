@@ -65,3 +65,23 @@ class Advantage(models.Model):
 
     def __str__(self):
         return self.name
+
+class Tourinfo(models.Model):
+
+    info=models.ForeignKey(Tour, on_delete=models.CASCADE)
+
+    name=models.CharField('название отеля', max_length=50)
+    country=models.CharField('страна', max_length=50)
+    resort=models.CharField('курорт', max_length=50)
+    tour_operator=models.CharField('туроператор', max_length=50)
+    category=models.FloatField('категория')
+    there=models.DateTimeField('туда')
+    back=models.DateTimeField('обратно')
+    nutrition=models.CharField('питание', max_length=50)
+    number=models.CharField('тип номера', max_length=50)
+    price=models.FloatField('цена')
+    image=models.ImageField('фото отеля')
+
+    class Meta:
+        verbose_name="Информация об туре"
+        verbose_name_plural="Информация об турах"
