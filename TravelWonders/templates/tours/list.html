@@ -10,7 +10,7 @@
         <p>{{hotel.star}} звезды</p>
         <p>{{hotel.tourr}} туров</p>
         <p>от {{hotel.price}} р</p>
-        <a href="#">Подробнее об отеле</a>
+        <a href="{% url 'tours:hotel_detail' %}">Подробнее об отеле</a>
         <a href="{% url 'tours:tour_list' %}">Показать туры ></a>
         <p>
             <img src="{{hotel.image.url}}" width="421" height="322">

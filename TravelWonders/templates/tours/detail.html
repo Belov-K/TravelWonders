@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}TravelWonders{% endblock %}
+
+{% block content %}
+
+    <a href="{% url 'tours:hotel_list' %}">Назад</a>
+
+    {% for detail in hotel_detail %}
+        <h1>{{detail.name}}</h1>
+        <h3>Гостиная</h3>
+        <p><img src="{{detail.livingroom.url}}" width="384" height="216"></p>
+        <h3>Спальня</h3>
+        <p><img src="{{detail.bedroom.url}}" width="384" height="216"></p>
+        <h3>Прихожая</h3>
+        <p><img src="{{detail.hallway.url}}" width="384" height="216"></p>
+    {% endfor %}
+
+    <h1>Приемущества</h1>
+
+    {% for a in advantage %}
+        <h2>{{a.name}}</h2>
+        <p><img src="{{detail.image.url}}" width="250" height="100"></p>
+    {% endfor %}
+
+{% endblock %}

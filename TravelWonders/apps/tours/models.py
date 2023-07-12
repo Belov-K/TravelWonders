@@ -55,9 +55,13 @@ class Hotel_detail(models.Model):
     def __str__(self):
         return self.name
 
-class Advantages(models.Model):
+class Advantage(models.Model):
     name=models.CharField('название преимущества', max_length=50)
     image=models.ImageField('фото')
+
+    class Meta:
+        verbose_name="Преимущество"
+        verbose_name_plural="Преимущества"
 
     def __str__(self):
         return self.name
